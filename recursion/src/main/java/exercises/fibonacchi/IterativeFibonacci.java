@@ -4,7 +4,18 @@ public class IterativeFibonacci implements FibonacciStrategy {
 
     @Override
     public long compute(int n) {
-        //TODO implement using iterative approach
+        if (n ==0) return 0;
+        if (n ==1) return 1;
+        long beforePrev =0;
+        long prev =1;
+        long current =0;
+        for (int i =2 ; i <= n; i++) {
+            current = beforePrev + prev;
+            beforePrev = prev;
+            prev = current;
+
+        }
+        return current;
     }
 
 
